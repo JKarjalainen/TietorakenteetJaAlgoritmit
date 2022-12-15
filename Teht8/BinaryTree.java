@@ -28,10 +28,10 @@ public class BinaryTree {
             root = new Node(aData);
         }
         else if(root.left() == null) {
-            root.setLeft(new BinaryTree(aData));
+            setLeft(new BinaryTree(aData));
         }
         else if(root.right() == null) {
-            root.setRight(new BinaryTree(aData));
+            setRight(new BinaryTree(aData));
         } else {
             root.left().insert(aData);
         }
