@@ -38,19 +38,19 @@ public class BinaryTree {
     }
     
     public BinaryTree find(String aData){
+        if(root == null) return null;
         if(root.getData().equals(aData)) {
             return this;
-        } else if(root.left().root.getData().equals(aData)) {
-            return root.left();
         }
-        else if(root.right().root.getData().equals(aData)) {
-            return root.right();
-        } else {
+        if(root.left() != null) {
             BinaryTree searchLeft = root.left().find(aData);
             if(searchLeft != null) return searchLeft;
-
-            return root.right().find(aData);
         }
+        if(root.right() != null) {
+            BinaryTree searchRight = root.right().find(aData);
+            if(searchRight != null) return searchRight;
+        }
+        return null;
     }
     public void preOrder() {
         if (root != null) {
