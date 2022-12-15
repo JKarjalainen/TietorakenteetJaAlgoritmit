@@ -33,7 +33,12 @@ public class BinaryTree {
         else if(root.right() == null) {
             setRight(new BinaryTree(aData));
         } else {
-            root.left().insert(aData);
+            if(Math.random() < 0.5) {
+                root.left().insert(aData);
+            } else {
+                root.right().insert(aData);
+            }
+
         }
     }
     
