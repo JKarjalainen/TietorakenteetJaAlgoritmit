@@ -38,7 +38,7 @@ public class BinaryTree {
     }
     
     public BinaryTree find(String aData){
-        if(root.equals(aData)) {
+        if(root.getData().equals(aData)) {
             return this;
         } else if(root.left().root.getData().equals(aData)) {
             return root.left();
