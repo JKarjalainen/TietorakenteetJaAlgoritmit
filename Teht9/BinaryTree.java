@@ -63,11 +63,15 @@ public class BinaryTree {
         if(root == null) return false;
         if(root.getData().equals(aData)) {
             if(root.left() != null) {
+                Node oldRoot = root;
                 root = root.left().root;
+                root.setRight(oldRoot.right());
                 return true;
             }
             if(root.right() != null) {
+                Node oldRoot = root;
                 root = root.right().root;
+                root.setRight(oldRoot.left());
                 return true;
             }
             root = null;
